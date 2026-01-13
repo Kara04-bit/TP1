@@ -1,0 +1,169 @@
+-------------------Exercice 1-------------------
+
+Un cycle de vie logiciel décrit :
+
+A. La durée de vie d'un programme en mémoire
+B. Les étapes de développement d’un logiciel
+C. Les performances du logiciel
+D. Les rôles des utilisateurs finaux
+
+-------------------Exercice 2-------------------
+
+------Configuration de mon git local----------------
+
+git config --global user.name "Mathis/Angot"
+git config --global user.name
+git config --global user.email "mathis53600@gmail.com"
+git config --global user.email 
+
+------Création du dépôt local et configuration------
+
+1- 
+mkdir Projet_git
+cd Projet_git
+git init 
+
+2- git status 
+3- nano .gitignore
+CR.txt
+*.a
+git status
+4- 
+nano fich1.c 
+git add fich1.c 
+git status 
+
+5- git commit -m "ajout 1"
+6- 
+nano fich2.c 
+nano fich3.c 
+git add fich2.c fich3.c 
+
+7- git commit -m "ajout 2"
+8- git log 
+9- nano fich1.c 
+#include <stdio.h>
+
+int main() {
+    printf("Hello World !\n");
+    return 0;
+}
+10- git diff
+11- git log 
+
+------Envoie du dépôt sur GitHub------
+ 
+git remote set-url origin https://github.com/Kara04-bit/TP1.git
+git push -u origin main 
+
+12- 
+nano fich4.c
+git add fich4.c
+
+13- git status 
+14-
+mkdir dossier2
+nano dossier2/fich5.c
+git add fich4.c dossier2/fich5.c
+git commit -m "Ajout fich4 et fich5"
+
+15- cette commande affiche les différences entre l’index et le dernier commit
+16- 
+rm dossier2/fich5.c
+rmdir dossier2
+
+17- 
+git status
+git restore dossier2/fich5.c 
+git status 
+
+18- git restore --staged fich4.c
+19- git branch "Version_bis"
+20- 
+git branch
+git checkout version-bis
+21- 
+nano fich6.c
+nano fich1.c
+git add fich6.c fich1.c
+
+22- git commit -m "Ajout fich6 et modification fich1"
+23- 
+git checkout main
+git merge version-bis
+
+24- git branch -d version_bis
+25- git push
+
+-------------------Exercice 3-------------------
+
+------Récupérer un dépôt distant------
+
+git clone https://github.com/Theo18004/TP_GIT.git
+cd TP_GIT
+
+nano fich1.c
+git add fich1.c
+git commit -m "Modification par voisin"
+
+git push
+on obtiens une erreur car ce n'est pas mon dépôt et j'ai pas les droits je peux seulement cloner et lire mais pas push 
+Pour que je puisse push il faudrait que mon voisin m'ajoute comme collaborateur
+
+------Retour vers le futur------
+
+git log 
+ls
+git checkout abbb02244e6f436004f7be4e872b639ab2e493b0
+ls 
+git checkout main 
+
+
+------Créer un tag------
+
+nano main.c
+git add main.c
+git commit -m "Ajout main.c"
+
+git tag v1.0
+git tag
+
+nano main.c
+git add main.c
+git commit -m "Modification main.c version 2"
+
+nano main.c
+git add main.c
+git commit -m "Modification main.c version 3"
+
+git tag v2.0
+git tag
+
+
+git checkout v1.0
+Vous êtes dans l'état « HEAD détachée ».
+
+
+git checkout main
+
+------Débuggage avec GIT------
+
+
+git bisect start
+git bisect bad
+git bisect good 8ce9302afb5ec6f0db1aed4a36fd84df9c2345d3
+
+git bisect good 8ce9302afb5ec6f0db1aed4a36fd84df9c2345d3
+fatal: Mauvaise révision en entrée (pas un commit) : 8ce9302afb5ec6f0db1aed4a36fd84df9c2345d3
+
+git bisect good 
+ba9a43988c7414df097acd78344efb2c94383732 était à la fois good et bad
+
+------Gestion des conflits------
+
+------Gestion des branches------
+
+-------------------Exercice 4-------------------
+
+1-
+
